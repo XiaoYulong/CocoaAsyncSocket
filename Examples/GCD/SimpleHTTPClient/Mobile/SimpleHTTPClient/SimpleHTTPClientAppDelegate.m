@@ -9,8 +9,8 @@
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 #define  WWW_PORT 0  // 0 => automatic
-#define  WWW_HOST @"www.amazon.com"
-#define CERT_HOST @"www.amazon.com"
+#define  WWW_HOST @"www.baidu.com"
+#define CERT_HOST @"www.baidu.com"
 
 #define USE_SECURE_CONNECTION    1
 #define USE_CFSTREAM_FOR_TLS     0 // Use old-school CFStream style technique
@@ -197,7 +197,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 	// We're just going to tell the server to send us the metadata (essentially) about a particular resource.
 	// The server will send an http response, and then immediately close the connection.
 	
-	NSString *requestStrFrmt = @"HEAD / HTTP/1.0\r\nHost: %@\r\n\r\n";
+	NSString *requestStrFrmt = @"GET / HTTP/1.0\r\nHost: %@\r\n\r\n";
 
 	NSString *requestStr = [NSString stringWithFormat:requestStrFrmt, WWW_HOST];
 	NSData *requestData = [requestStr dataUsingEncoding:NSUTF8StringEncoding];
